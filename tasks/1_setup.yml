@@ -37,6 +37,7 @@
     image: '{{ traefik_image }}'
     restart_policy: unless-stopped
     published_ports: '{{ traefik_ports }}'
+    exposed_ports: '8080'
     volumes: '{{ traefik_volumes + traefik_add_volumes }}'
     container_default_behavior: compatibility
     labels: '{{ traefik_labels }}'
