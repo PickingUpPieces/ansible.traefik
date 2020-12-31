@@ -41,6 +41,7 @@
     volumes: '{{ traefik_volumes + traefik_add_volumes }}'
     container_default_behavior: compatibility
     labels: '{{ traefik_labels }}'
+    env: '{{ traefik_docker_env | default(omit) }}'
     command:
       - '--configFile=/etc/traefik/traefik.yml'
     networks:
